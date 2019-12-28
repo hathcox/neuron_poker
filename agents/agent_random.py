@@ -15,6 +15,7 @@ class Player:
         self.actions = []
         self.last_action_in_stage = ''
         self.temp_stack = []
+        self.cards = []
         self.name = name
         self.autoplay = True
 
@@ -27,4 +28,5 @@ class Player:
                                     Action.RAISE_2POT}
         possible_moves = this_player_action_space.intersection(set(action_space))
         action = random.choice(list(possible_moves))
+        print(self.cards)
         return action

@@ -657,6 +657,7 @@ class HoldemTable(Env):
             for _ in range(2):
                 card = np.random.randint(0, len(self.deck))
                 player.cards.append(self.deck.pop(card))
+            player.agent_obj.cards = player.cards
             log.info(f"Player {player.seat} got {player.cards} and ${player.stack}")
 
     def _distribute_cards_to_table(self, amount_of_cards):
